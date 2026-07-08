@@ -1,0 +1,269 @@
+[gd_scene format=3 uid="uid://dc5fds76hv6bf"]
+
+[ext_resource type="Script" uid="uid://r63ilqvxtwrh" path="res://start_menu.gd" id="1_ee4bf"]
+[ext_resource type="FontFile" uid="uid://gq4ljohg0y61" path="res://assets/pixelify-sans/PixelifySans-Bold.ttf" id="2_ee4bf"]
+[ext_resource type="Texture2D" uid="uid://uspxu13nojbd" path="res://assets/roll_title (2).png" id="3_ee4bf"]
+[ext_resource type="Texture2D" uid="uid://dhyxe3onyemyc" path="res://assets/UIpackSheet_transparent.png" id="3_fj5cn"]
+[ext_resource type="Texture2D" uid="uid://us445m3wfem" path="res://assets/tilemap (2).png" id="5_kbped"]
+[ext_resource type="Shader" uid="uid://bij6yb11vy1lp" path="res://blur.gdshader" id="6_fj5cn"]
+[ext_resource type="FontFile" uid="uid://ddhaikwbao3lg" path="res://assets/Silkscreen/Silkscreen-Regular.ttf" id="6_iy58a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeska"]
+atlas = ExtResource("3_fj5cn")
+region = Rect2(487, 127, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oeska"]
+texture = ExtResource("3_fj5cn")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(55, 397, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj5cn"]
+atlas = ExtResource("5_kbped")
+region = Rect2(460, 256, 13, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbped"]
+atlas = SubResource("AtlasTexture_fj5cn")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy58a"]
+atlas = ExtResource("3_fj5cn")
+region = Rect2(163, 397, 14, 14)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kbped"]
+shader = ExtResource("6_fj5cn")
+shader_parameter/blur_amount = 3.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a6wx"]
+atlas = ExtResource("3_fj5cn")
+region = Rect2(379, 127, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kbped"]
+texture = ExtResource("3_fj5cn")
+region_rect = Rect2(55, 415, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fj5cn"]
+texture = ExtResource("3_fj5cn")
+region_rect = Rect2(55, 415, 14, 14)
+modulate_color = Color(0.735357, 0.735357, 0.735357, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iy58a"]
+texture = ExtResource("3_fj5cn")
+region_rect = Rect2(55, 415, 14, 14)
+modulate_color = Color(0.85814106, 0.85814106, 0.85814106, 1)
+
+[node name="Intro" type="Control" unique_id=378420550]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ee4bf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1057901343]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" unique_id=536587056]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/MarginContainer2" unique_id=1534272032]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_oeska")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/NinePatchRect" unique_id=958922158]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("3_ee4bf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=489938498]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 24
+
+[node name="start" type="Button" parent="VBoxContainer/MarginContainer" unique_id=193417008]
+custom_minimum_size = Vector2(458, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("2_ee4bf")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = SubResource("StyleBoxTexture_oeska")
+text = "Start"
+icon = SubResource("AtlasTexture_kbped")
+expand_icon = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1415098260]
+layer = -5
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer" unique_id=1969718497]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_iy58a")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CreditsButton" type="Button" parent="." unique_id=1431860934]
+layout_mode = 0
+offset_left = 905.0
+offset_top = 527.0
+offset_right = 1024.0
+offset_bottom = 566.0
+theme_override_fonts/font = ExtResource("6_iy58a")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_oeska")
+text = "Credits"
+
+[node name="CreditsOverlay" type="Control" parent="." unique_id=2112702158]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="BlurBackground" type="ColorRect" parent="CreditsOverlay" unique_id=1340905311]
+material = SubResource("ShaderMaterial_kbped")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterPositioner" type="MarginContainer" parent="CreditsOverlay" unique_id=43437870]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MiniWindow" type="Control" parent="CreditsOverlay/CenterPositioner" unique_id=348165934]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+
+[node name="BG" type="NinePatchRect" parent="CreditsOverlay/CenterPositioner/MiniWindow" unique_id=915369269]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_6a6wx")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="TextPadding" type="MarginContainer" parent="CreditsOverlay/CenterPositioner/MiniWindow" unique_id=160517250]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="CreditsText" type="RichTextLabel" parent="CreditsOverlay/CenterPositioner/MiniWindow/TextPadding" unique_id=1227872527]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center][font_size=32][b]CREDITS[/b][/font_size][/center]
+
+[color=#ffe066][font_size=20][b]DEVELOPMENT[/b][/font_size][/color]
+[color=#a2a2a2]-----------------------------------------------------------------[/color]
+Developed by: [b]Elephant_dev[/b] (All Rights Reserved)
+
+[color=#ffe066][font_size=20][b]ASSETS & THIRD-PARTY RESOURCES[/b][/font_size][/color]
+[color=#a2a2a2]-----------------------------------------------------------------[/color]
+[b]• KabGames[/b] (via itch.io)
+  Asset used: [i]Insert Asset Name[/i]
+  Licensed under [url=https://creativecommons.org/licenses/by/4.0/]CC BY 4.0[/url]
+  [color=#8cc7ff]*Note: Colors and sizes were modified for project integration.*[/color]
+
+[b]• Kenney[/b] ([url=https://kenney.nl]kenney.nl[/url])
+  UI, Audio, and 2D Art Assets
+  Licensed under [b]CC0 1.0 Universal[/b] (Public Domain)
+
+[b]• Nikoichu[/b] (via itch.io)
+  2D Art and Animation Assets
+  Licensed under [b]CC0 1.0 Universal[/b] (Public Domain)
+
+[b]• Elephant_dev[/b]
+  Original Programming and Design Assets
+  All Rights Reserved (ARR)
+
+[color=#ffe066][font_size=20][b]ENGINE & LEGAL[/b][/font_size][/color]
+[color=#a2a2a2]-----------------------------------------------------------------[/color]
+This game uses [b]Godot Engine[/b], available under the terms of the MIT license. 
+To view the full copyright details, visit the official [url=https://godotengine.org/license]Godot Engine License Page[/url]."
+
+[node name="BackButon" type="Button" parent="CreditsOverlay/CenterPositioner/MiniWindow" unique_id=1545459463]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 40.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_kbped")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fj5cn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iy58a")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="gui_input" from="CreditsOverlay" to="." method="_on_credits_overlay_gui_input"]
+[connection signal="meta_clicked" from="CreditsOverlay/CenterPositioner/MiniWindow/TextPadding/CreditsText" to="." method="_on_credits_text_meta_clicked"]
+[connection signal="pressed" from="CreditsOverlay/CenterPositioner/MiniWindow/BackButon" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CreditsOverlay/CenterPositioner/MiniWindow/BackButon" to="." method="_on_back_buton_pressed"]

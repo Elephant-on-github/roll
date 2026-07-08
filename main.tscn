@@ -1,0 +1,891 @@
+[gd_scene format=3 uid="uid://ds3hj6roj38gh"]
+
+[ext_resource type="Script" uid="uid://jjirdtippw8a" path="res://level_handler.gd" id="1_lswn8"]
+[ext_resource type="Script" uid="uid://lgqtpj7y1b3m" path="res://main.gd" id="2_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://d35kkgjhubaax" path="res://assets/shield.png" id="3_7mycd"]
+[ext_resource type="Script" uid="uid://bf3oa11xe176e" path="res://status.gd" id="3_272bh"]
+[ext_resource type="Texture2D" uid="uid://bglt6e82t5gxu" path="res://assets/sword.png" id="4_272bh"]
+[ext_resource type="Script" uid="uid://brwr4p6st2ljc" path="res://area_2d.gd" id="4_a6jrf"]
+[ext_resource type="Script" uid="uid://cueu3ks7se42r" path="res://info.gd" id="6_xuqvo"]
+[ext_resource type="Script" uid="uid://dhpmjwns1pkp3" path="res://dice.gd" id="8_kek77"]
+[ext_resource type="Script" uid="uid://dwempx0g80mnk" path="res://health.gd" id="8_seu75"]
+[ext_resource type="Texture2D" uid="uid://bk4yfrlc1cnrr" path="res://assets/dice/dice sheet.png" id="9_kek77"]
+[ext_resource type="Texture2D" uid="uid://dlvgxqt1yq1cq" path="res://assets/Tiles/tile_0108.png" id="10_074og"]
+[ext_resource type="Texture2D" uid="uid://drwlg02n0fh2o" path="res://assets/Tiles/tile_0109.png" id="11_cegan"]
+[ext_resource type="Texture2D" uid="uid://cp5oni38j3yks" path="res://assets/Tiles/tile_0120.png" id="12_82xsv"]
+[ext_resource type="Texture2D" uid="uid://bcrkyy3pe3um0" path="res://assets/Tiles/tile_0121.png" id="13_getpj"]
+[ext_resource type="Texture2D" uid="uid://c87op4i0cb1wq" path="res://assets/Tiles/tile_0122.png" id="14_ryguw"]
+[ext_resource type="Texture2D" uid="uid://b5ovjlbhi67kv" path="res://assets/Tiles/tile_0008.png" id="15_d13ii"]
+[ext_resource type="Texture2D" uid="uid://5hb7btvhtxdr" path="res://assets/Tiles/tile_0020.png" id="16_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://cog52g5b12oep" path="res://assets/Tiles/tile_0044.png" id="17_0odxb"]
+[ext_resource type="Texture2D" uid="uid://blu27xxcrmif6" path="res://assets/Tiles/tile_0073.png" id="18_lswn8"]
+[ext_resource type="Script" uid="uid://bk81wwjuga1c7" path="res://opponent.gd" id="19_cegan"]
+[ext_resource type="Texture2D" uid="uid://bv03lh80oskle" path="res://assets/FX052_nyknck/FX052_01.png" id="20_d13ii"]
+[ext_resource type="Texture2D" uid="uid://dicoeumcbagdx" path="res://assets/FX052_nyknck/FX052_02.png" id="21_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://ct1dhcp5ehvs4" path="res://assets/FX052_nyknck/FX052_03.png" id="22_0odxb"]
+[ext_resource type="Texture2D" uid="uid://c0u8pqbhj8yvj" path="res://assets/FX052_nyknck/FX052_04.png" id="23_lswn8"]
+[ext_resource type="FontFile" uid="uid://ddhaikwbao3lg" path="res://assets/Silkscreen/Silkscreen-Regular.ttf" id="25_0odxb"]
+[ext_resource type="Texture2D" uid="uid://yhgd5f2npwj5" path="res://assets/dice/dice sheet blue.png" id="27_a6jrf"]
+[ext_resource type="Script" uid="uid://2sfx11atsjeh" path="res://loss_overlay.gd" id="28_kq58d"]
+[ext_resource type="Shader" uid="uid://bij6yb11vy1lp" path="res://blur.gdshader" id="28_qsp4k"]
+[ext_resource type="Script" uid="uid://bh8jll6yrmahq" path="res://enemy_die.gd" id="28_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://dhyxe3onyemyc" path="res://assets/UIpackSheet_transparent.png" id="29_qsp4k"]
+[ext_resource type="Script" uid="uid://ydegkgxowuxs" path="res://container.gd" id="30_kq58d"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ltl73"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dc5f"]
+atlas = ExtResource("29_qsp4k")
+region = Rect2(163, 397, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvmpa"]
+atlas = ExtResource("29_qsp4k")
+region = Rect2(487, 127, 14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oeska"]
+size = Vector2(22, 21.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
+atlas = ExtResource("9_kek77")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c57u"]
+atlas = ExtResource("9_kek77")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
+atlas = ExtResource("9_kek77")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
+atlas = ExtResource("9_kek77")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycdy4"]
+atlas = ExtResource("9_kek77")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w48qg"]
+atlas = ExtResource("9_kek77")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vivmo"]
+atlas = ExtResource("9_kek77")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cqfq"]
+atlas = ExtResource("9_kek77")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mvmpa"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kek77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c57u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efxa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg77c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycdy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w48qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vivmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cqfq")
+}],
+"loop": 1,
+"name": &"roll",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeska"]
+atlas = ExtResource("29_qsp4k")
+region = Rect2(487, 127, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok6jj"]
+atlas = ExtResource("29_qsp4k")
+region = Rect2(326, 451, 12, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deqvp"]
+atlas = ExtResource("29_qsp4k")
+region = Rect2(379, 127, 14, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_deqvp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_074og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cegan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_82xsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_getpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ryguw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_d13ii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1u8w0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0odxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_lswn8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cegan"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_d13ii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1u8w0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_0odxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_lswn8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_facbu"]
+atlas = ExtResource("29_qsp4k")
+region = Rect2(379, 127, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuqvo"]
+atlas = ExtResource("27_a6jrf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsp4k"]
+atlas = ExtResource("27_a6jrf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq58d"]
+atlas = ExtResource("27_a6jrf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seu75"]
+atlas = ExtResource("27_a6jrf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htxhm"]
+atlas = ExtResource("27_a6jrf")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq2sk"]
+atlas = ExtResource("27_a6jrf")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4k2k6"]
+atlas = ExtResource("27_a6jrf")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rl1p"]
+atlas = ExtResource("27_a6jrf")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lswn8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuqvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsp4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq58d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seu75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htxhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq2sk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4k2k6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rl1p")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qsp4k"]
+shader = ExtResource("28_qsp4k")
+shader_parameter/blur_amount = 3.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1qrp"]
+atlas = ExtResource("29_qsp4k")
+region = Rect2(379, 127, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_come4"]
+atlas = ExtResource("29_qsp4k")
+region = Rect2(55, 397, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_htxhm"]
+texture = SubResource("AtlasTexture_come4")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[node name="handler" type="Node2D" unique_id=1475497315]
+material = SubResource("CanvasItemMaterial_ltl73")
+script = ExtResource("1_lswn8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2128732418]
+layer = -5
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer" unique_id=1180314753]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_3dc5f")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Dice_container" type="Control" parent="." unique_id=1321385367]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("8_kek77")
+
+[node name="texture" type="NinePatchRect" parent="Dice_container" unique_id=402157891]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 374.0
+offset_right = 1024.0
+offset_bottom = 566.0
+texture = SubResource("AtlasTexture_mvmpa")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Dice_container/texture" unique_id=550754514]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="Dice_container/texture/HBoxContainer" unique_id=1677915651]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Dice_container/texture/HBoxContainer/Control" unique_id=270076247]
+scale = Vector2(4, 4)
+remote_path = NodePath("../Area2D/Die")
+
+[node name="Area2D" type="Area2D" parent="Dice_container/texture/HBoxContainer/Control" unique_id=720040932]
+position = Vector2(263, 0)
+script = ExtResource("4_a6jrf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dice_container/texture/HBoxContainer/Control/Area2D" unique_id=840605602]
+position = Vector2(-263, 0.5)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_oeska")
+
+[node name="Die" type="AnimatedSprite2D" parent="Dice_container/texture/HBoxContainer/Control/Area2D" unique_id=1001431909]
+position = Vector2(-263, 0)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_mvmpa")
+animation = &"roll"
+
+[node name="Info" type="Control" parent="." unique_id=1050706660]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_xuqvo")
+
+[node name="texture" type="NinePatchRect" parent="Info" unique_id=347782090]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 374.0
+offset_right = 304.0
+offset_bottom = 566.0
+texture = SubResource("AtlasTexture_mvmpa")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Info/texture" unique_id=1435755735]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.5
+offset_top = -89.0
+offset_right = 76.5
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Info/texture/VBoxContainer" unique_id=1106869105]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("25_0odxb")
+theme_override_font_sizes/font_size = 18
+text = "Health"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Info/texture/VBoxContainer" unique_id=1234538282]
+layout_mode = 2
+theme_override_constants/margin_top = -23
+
+[node name="Health" type="Label" parent="Info/texture/VBoxContainer/MarginContainer2" unique_id=337562733]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("25_0odxb")
+theme_override_font_sizes/font_size = 64
+text = "10"
+script = ExtResource("8_seu75")
+
+[node name="Label2" type="Label" parent="Info/texture/VBoxContainer" unique_id=1926872887]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("25_0odxb")
+theme_override_font_sizes/font_size = 18
+text = "Level"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="Info/texture/VBoxContainer" unique_id=1580408399]
+layout_mode = 2
+theme_override_constants/margin_top = -23
+
+[node name="level" type="Label" parent="Info/texture/VBoxContainer/MarginContainer3" unique_id=1071019742]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("25_0odxb")
+theme_override_font_sizes/font_size = 64
+text = "258"
+
+[node name="Modifier" type="Control" parent="." unique_id=656215552]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="texture" type="NinePatchRect" parent="Modifier" unique_id=981652648]
+self_modulate = Color(1, 1, 1, 0.45882353)
+custom_minimum_size = Vector2(64, 454)
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 112.0
+offset_right = 88.0
+offset_bottom = 566.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_oeska")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Container" type="VBoxContainer" parent="Modifier/texture" unique_id=377834345]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = -6.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -32
+script = ExtResource("30_kq58d")
+
+[node name="Modifier" type="TextureRect" parent="Modifier/texture/Container" unique_id=56078070]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_ok6jj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Modifier4" type="TextureRect" parent="Modifier/texture/Container" unique_id=795872944]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_ok6jj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Modifier5" type="TextureRect" parent="Modifier/texture/Container" unique_id=920627942]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_ok6jj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Modifier2" type="TextureRect" parent="Modifier/texture/Container" unique_id=863803215]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_ok6jj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Modifier6" type="TextureRect" parent="Modifier/texture/Container" unique_id=917103747]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_ok6jj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Modifier7" type="TextureRect" parent="Modifier/texture/Container" unique_id=248972837]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_ok6jj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Modifier3" type="TextureRect" parent="Modifier/texture/Container" unique_id=1941349223]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_ok6jj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Modifier8" type="TextureRect" parent="Modifier/texture/Container" unique_id=1680061419]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_ok6jj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Modifier9" type="TextureRect" parent="Modifier/texture/Container" unique_id=1782874661]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_ok6jj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Modifier/texture" unique_id=1773869698]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = 93.5
+offset_right = 176.0
+offset_bottom = 124.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+theme_override_fonts/font = ExtResource("25_0odxb")
+theme_override_font_sizes/font_size = 24
+text = "Coming Soon"
+
+[node name="Enemy" type="Control" parent="." unique_id=478565545]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("19_cegan")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Enemy" unique_id=363050003]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 24.0
+offset_right = 1024.0
+offset_bottom = 350.0
+texture = SubResource("AtlasTexture_deqvp")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Enemy_name" type="Label" parent="Enemy/NinePatchRect" unique_id=655527578]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = 139.20001
+offset_top = 95.0
+offset_right = 666.2
+offset_bottom = 231.0
+grow_horizontal = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("25_0odxb")
+theme_override_font_sizes/font_size = 72
+text = "Opponent"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Enemy/NinePatchRect" unique_id=1483000403]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.5
+anchor_right = 0.2
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Enemy/NinePatchRect/HBoxContainer" unique_id=13344753]
+layout_mode = 2
+
+[node name="opponent" type="AnimatedSprite2D" parent="Enemy/NinePatchRect/HBoxContainer/Control" unique_id=508697844]
+unique_name_in_owner = true
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_deqvp")
+
+[node name="smoke" type="AnimatedSprite2D" parent="Enemy/NinePatchRect/HBoxContainer/Control" unique_id=1279438824]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_cegan")
+frame = 2
+frame_progress = 0.7575136
+
+[node name="opponent2" type="RemoteTransform2D" parent="Enemy/NinePatchRect/HBoxContainer/Control" unique_id=820748734]
+scale = Vector2(15, 15)
+remote_path = NodePath("../opponent")
+
+[node name="smoke2" type="RemoteTransform2D" parent="Enemy/NinePatchRect/HBoxContainer/Control" unique_id=1662507979]
+scale = Vector2(8, 8)
+remote_path = NodePath("../smoke")
+
+[node name="round" type="Label" parent="Enemy/NinePatchRect" unique_id=2011489756]
+layout_mode = 0
+offset_left = 559.0
+offset_top = 184.0
+offset_right = 666.0
+offset_bottom = 266.0
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("25_0odxb")
+theme_override_font_sizes/font_size = 64
+text = "(2)"
+horizontal_alignment = 2
+
+[node name="enemy_info" type="Control" parent="." unique_id=1950396479]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="texture" type="NinePatchRect" parent="enemy_info" unique_id=259905]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 24.0
+offset_right = 304.0
+offset_bottom = 350.0
+texture = SubResource("AtlasTexture_facbu")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="enemy_info/texture" unique_id=315160844]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="enemy_info/texture" unique_id=179184974]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.09375
+anchor_top = 0.21779141
+anchor_right = 0.90625
+anchor_bottom = 0.78220856
+offset_top = -41.0
+offset_bottom = -40.999985
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="enemy_info/texture/VBoxContainer" unique_id=1178931227]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("25_0odxb")
+theme_override_font_sizes/font_size = 18
+text = "Enemy Health"
+
+[node name="MarginContainer2" type="MarginContainer" parent="enemy_info/texture/VBoxContainer" unique_id=123737614]
+layout_mode = 2
+theme_override_constants/margin_top = -23
+
+[node name="Enemy_health" type="Label" parent="enemy_info/texture/VBoxContainer/MarginContainer2" unique_id=1210910169]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("25_0odxb")
+theme_override_font_sizes/font_size = 64
+text = "258"
+
+[node name="MarginContainer" type="MarginContainer" parent="enemy_info/texture/VBoxContainer" unique_id=1209956105]
+layout_mode = 2
+theme_override_constants/margin_top = 64
+
+[node name="Control" type="Control" parent="enemy_info/texture/VBoxContainer/MarginContainer" unique_id=404546939]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="enemy_info/texture/VBoxContainer/MarginContainer/Control" unique_id=901020404]
+scale = Vector2(4, 4)
+remote_path = NodePath("../Enemy_die")
+
+[node name="Enemy_die" type="AnimatedSprite2D" parent="enemy_info/texture/VBoxContainer/MarginContainer/Control" unique_id=717685770]
+unique_name_in_owner = true
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_lswn8")
+script = ExtResource("28_xuqvo")
+
+[node name="status_atk_def" type="Control" parent="." unique_id=2093454207]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_272bh")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="status_atk_def" unique_id=1361835856]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 88.0
+offset_bottom = 88.0
+texture = ExtResource("29_qsp4k")
+region_rect = Rect2(487, 127, 14, 14)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="status_atk_def/NinePatchRect" unique_id=1972079312]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="status_atk_def/NinePatchRect/CenterContainer" unique_id=550055258]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Shield" type="Sprite2D" parent="status_atk_def/NinePatchRect/CenterContainer/Control" unique_id=1154519767]
+z_index = 2
+position = Vector2(0, 2)
+scale = Vector2(4, 4)
+texture = ExtResource("3_7mycd")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="status_atk_def/NinePatchRect/CenterContainer/Control" unique_id=777910722]
+position = Vector2(0, 2)
+scale = Vector2(4, 4)
+remote_path = NodePath("../Shield")
+
+[node name="Control2" type="Control" parent="status_atk_def/NinePatchRect/CenterContainer" unique_id=674070578]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="status_atk_def/NinePatchRect/CenterContainer/Control2" unique_id=737988601]
+scale = Vector2(4, 4)
+remote_path = NodePath("../Sword")
+
+[node name="Sword" type="Sprite2D" parent="status_atk_def/NinePatchRect/CenterContainer/Control2" unique_id=1593723192]
+z_index = 2
+scale = Vector2(4, 4)
+texture = ExtResource("4_272bh")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=214921036]
+visible = false
+
+[node name="LossOverlay" type="Control" parent="CanvasLayer2" unique_id=2076620650]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("28_kq58d")
+
+[node name="BlurBackground" type="ColorRect" parent="CanvasLayer2/LossOverlay" unique_id=108154340]
+material = SubResource("ShaderMaterial_qsp4k")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterPositioner" type="MarginContainer" parent="CanvasLayer2/LossOverlay" unique_id=1088053868]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MiniWindow" type="Control" parent="CanvasLayer2/LossOverlay/CenterPositioner" unique_id=538381729]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+
+[node name="BG" type="NinePatchRect" parent="CanvasLayer2/LossOverlay/CenterPositioner/MiniWindow" unique_id=519514411]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_b1qrp")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="TextPadding" type="MarginContainer" parent="CanvasLayer2/LossOverlay/CenterPositioner/MiniWindow" unique_id=775707166]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Title" type="Label" parent="CanvasLayer2/LossOverlay/CenterPositioner/MiniWindow/TextPadding" unique_id=1414758928]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("25_0odxb")
+theme_override_font_sizes/font_size = 48
+text = "YOU LOSE"
+
+[node name="Level" type="Label" parent="CanvasLayer2/LossOverlay/CenterPositioner/MiniWindow/TextPadding" unique_id=346747615]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("25_0odxb")
+theme_override_font_sizes/font_size = 24
+text = "Level:"
+
+[node name="ReplayButon" type="Button" parent="CanvasLayer2/LossOverlay/CenterPositioner/MiniWindow/TextPadding" unique_id=769937252]
+custom_minimum_size = Vector2(192, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("25_0odxb")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_htxhm")
+text = "Replay"
+
+[node name="Process" type="Control" parent="." unique_id=1379930073]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_xuqvo")
+
+[connection signal="reward_claimed" from="." to="Process" method="_on_handler_reward_claimed"]
+[connection signal="is_rolled" from="Dice_container" to="Process" method="_on_dice_container_is_rolled"]
+[connection signal="clicked" from="Dice_container/texture/HBoxContainer/Control/Area2D" to="Dice_container" method="_on_area_2d_clicked"]
+[connection signal="mouse_entered" from="Dice_container/texture/HBoxContainer/Control/Area2D" to="Dice_container/texture/HBoxContainer/Control/Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Dice_container/texture/HBoxContainer/Control/Area2D" to="Dice_container/texture/HBoxContainer/Control/Area2D" method="_on_mouse_exited"]
+[connection signal="levelup" from="Enemy" to="Process" method="_on_enemy_levelup"]
+[connection signal="pressed" from="CanvasLayer2/LossOverlay/CenterPositioner/MiniWindow/TextPadding/ReplayButon" to="CanvasLayer2/LossOverlay" method="_on_replay_buton_pressed"]
+[connection signal="damage_oh_no" from="Process" to="Info/texture/VBoxContainer/MarginContainer2/Health" method="_on_process_damage_oh_no"]
+[connection signal="loss" from="Process" to="CanvasLayer2/LossOverlay" method="_on_process_loss"]
+[connection signal="prize" from="Process" to="." method="_on_process_prize"]

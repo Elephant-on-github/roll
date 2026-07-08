@@ -1,0 +1,345 @@
+[gd_scene format=3 uid="uid://mll2ox8rkqkj"]
+
+[ext_resource type="Script" uid="uid://dgpk1nl21jauu" path="res://prize_menu.gd" id="1_135ro"]
+[ext_resource type="Texture2D" uid="uid://dhyxe3onyemyc" path="res://assets/UIpackSheet_transparent.png" id="1_mxbuj"]
+[ext_resource type="Script" uid="uid://btubyt47nj545" path="res://add_attack.gd" id="3_ooppx"]
+[ext_resource type="Texture2D" uid="uid://clcutlu6kcncu" path="res://assets/RPG_Item_Weapon_Shortsword_Melee.png" id="3_xy0vs"]
+[ext_resource type="FontFile" uid="uid://ddhaikwbao3lg" path="res://assets/Silkscreen/Silkscreen-Regular.ttf" id="4_ooppx"]
+[ext_resource type="Texture2D" uid="uid://b3ajotl6igyee" path="res://assets/RPG_Item_Stat_Shield_Defense_Armor.png" id="5_7tkk8"]
+[ext_resource type="Texture2D" uid="uid://dma6g848pdmgw" path="res://assets/RPG_Stat_HP_Health_Heart.png" id="6_jcoyg"]
+[ext_resource type="Script" uid="uid://b3pb73yn42qnu" path="res://add_defense.gd" id="6_s8r0b"]
+[ext_resource type="Texture2D" uid="uid://cr3pa66hekxip" path="res://assets/RPG_Stat_HP_Health_Heart (2).png" id="7_s8r0b"]
+[ext_resource type="Script" uid="uid://c3cax4e7u8p03" path="res://add_health.gd" id="8_hhi7u"]
+[ext_resource type="Texture2D" uid="uid://dfa4yj0jp2k47" path="res://assets/dice/dice_2.png" id="8_igwcw"]
+[ext_resource type="Script" uid="uid://cfnkfvx0ppu5a" path="res://dec_enemy_health.gd" id="10_s8r0b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a0lco"]
+texture = ExtResource("1_mxbuj")
+region_rect = Rect2(55, 415, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qr5hm"]
+texture = ExtResource("1_mxbuj")
+region_rect = Rect2(55, 415, 14, 14)
+modulate_color = Color(0.735357, 0.735357, 0.735357, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxbuj"]
+texture = ExtResource("1_mxbuj")
+region_rect = Rect2(55, 415, 14, 14)
+modulate_color = Color(0.85814106, 0.85814106, 0.85814106, 1)
+
+[node name="Ui_node" type="Control" unique_id=687992321]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_135ro")
+
+[node name="UI_Container" type="MarginContainer" parent="." unique_id=811978549]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI_Container" unique_id=709761647]
+custom_minimum_size = Vector2(500, 290)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_mxbuj")
+region_rect = Rect2(55, 397, 14, 14)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_Container/NinePatchRect" unique_id=302761565]
+propagate_maximum_size = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_Container/NinePatchRect/MarginContainer" unique_id=1440882543]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_top = -24
+theme_override_constants/margin_right = -24
+
+[node name="Button" type="Button" parent="UI_Container/NinePatchRect/MarginContainer/MarginContainer" unique_id=2146656044]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_a0lco")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qr5hm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mxbuj")
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI_Container/NinePatchRect/MarginContainer" unique_id=1266711784]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Button2" type="Button" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer" unique_id=1616051008]
+custom_minimum_size = Vector2(400, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("3_ooppx")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button2" unique_id=1335010977]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mxbuj")
+region_rect = Rect2(163, 397, 14, 14)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button2/NinePatchRect" unique_id=189772143]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button2/NinePatchRect/HBoxContainer" unique_id=2069152321]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+texture = ExtResource("3_xy0vs")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button2/NinePatchRect/HBoxContainer" unique_id=396501157]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ooppx")
+text = "Increase Attack"
+
+[node name="Button3" type="Button" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer" unique_id=470406754]
+custom_minimum_size = Vector2(400, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("6_s8r0b")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button3" unique_id=867604187]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mxbuj")
+region_rect = Rect2(163, 397, 14, 14)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button3/NinePatchRect2" unique_id=1138732717]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button3/NinePatchRect2/HBoxContainer" unique_id=616050275]
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+texture = ExtResource("5_7tkk8")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button3/NinePatchRect2/HBoxContainer" unique_id=177777096]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ooppx")
+text = "Decrease Enemy Health"
+
+[node name="Button4" type="Button" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer" unique_id=1374106718]
+custom_minimum_size = Vector2(400, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("8_hhi7u")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button4" unique_id=2142765909]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mxbuj")
+region_rect = Rect2(163, 397, 14, 14)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button4/NinePatchRect" unique_id=519199118]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button4/NinePatchRect/HBoxContainer" unique_id=1473948039]
+custom_minimum_size = Vector2(30, 28)
+layout_mode = 2
+texture = ExtResource("6_jcoyg")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button4/NinePatchRect/HBoxContainer" unique_id=1232550322]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ooppx")
+text = "Increase Health"
+
+[node name="Button5" type="Button" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer" unique_id=572908062]
+custom_minimum_size = Vector2(400, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("10_s8r0b")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button5" unique_id=1357102104]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mxbuj")
+region_rect = Rect2(163, 397, 14, 14)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button5/NinePatchRect2" unique_id=1911830428]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button5/NinePatchRect2/HBoxContainer" unique_id=829620342]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+texture = ExtResource("7_s8r0b")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button5/NinePatchRect2/HBoxContainer" unique_id=711534143]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ooppx")
+text = "Decrease Enemy Health"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer" unique_id=1262051279]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Button6" type="Button" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=490293431]
+custom_minimum_size = Vector2(195, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/Button6" unique_id=893723105]
+modulate = Color(1, 1, 1, 0.45882353)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mxbuj")
+region_rect = Rect2(163, 397, 14, 14)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/Button6/NinePatchRect2" unique_id=549408052]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/Button6/NinePatchRect2/HBoxContainer" unique_id=843490462]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+texture = ExtResource("8_igwcw")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/Button6/NinePatchRect2/HBoxContainer" unique_id=1226861009]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ooppx")
+text = "Another Die"
+
+[node name="Button7" type="Button" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=947115938]
+custom_minimum_size = Vector2(195, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/Button7" unique_id=1019014655]
+modulate = Color(1, 1, 1, 0.45882353)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mxbuj")
+region_rect = Rect2(163, 397, 14, 14)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/Button7/NinePatchRect2" unique_id=967565670]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/Button7/NinePatchRect2/HBoxContainer" unique_id=442024311]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ooppx")
+text = "Coming soon"
+
+[connection signal="add_attack" from="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_add_attack"]
+[connection signal="pressed" from="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button2" to="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button2" method="_on_pressed"]
+[connection signal="add_defense" from="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button3" to="." method="_on_button_3_add_defense"]
+[connection signal="pressed" from="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button3" to="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button3" method="_on_pressed"]
+[connection signal="add_health" from="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button4" to="." method="_on_button_4_add_health"]
+[connection signal="pressed" from="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button4" to="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button4" method="_on_pressed"]
+[connection signal="dec_enemy_health" from="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button5" to="." method="_on_button_5_dec_enemy_health"]
+[connection signal="pressed" from="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button5" to="UI_Container/NinePatchRect/MarginContainer/VBoxContainer/Button5" method="_on_pressed"]
